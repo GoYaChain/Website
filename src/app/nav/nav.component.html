@@ -1,0 +1,71 @@
+<span class="i">
+  <nav class="sticky navbar navbar-expand-lg nav_ss" id="navigation">
+    <button class="navbar-toggler" type="button" (click)="isShown= !isShown" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span style="width: 20px" class="navbar-toggler-icon"><svg aria-hidden="true" focusable="false" data-prefix="fas"
+          data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512">
+          <path fill="currentColor" d="M16 132h416c8.837 0 16-7.163
+            16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0
+            8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163
+            16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0
+            8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163
+            16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0
+            8.837 7.163 16 16 16z"></path>
+        </svg></span>
+      <!-- <i class="fas fa-bars"></i> -->
+    </button>
+    <div class="collapse navbar-collapse nav-margin" id="navbarSupportedContent
+      height-top" [ngClass]="{ show: isShown }">
+      <ul class="navbar-nav">
+        <div class="col-md-12 col-12 col-sm-12 text-center logo">
+          <img class="logo-main-marign-override" width="30" height="40" src="../../assets/logo3.png" alt="NFT
+            Marketplace">
+        </div>
+        <div class="col-md-12 col-12 col-sm-12 text-center logo">
+          <img class="logo-magin logo-words" height="30" src="../../assets/5.png" alt="NFT
+            Marketplace">
+        </div>
+
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <a class="nav-item text-uppercase monsta_font" href="">
+            Home
+          </a>
+        </li>
+        <li class="text-uppercase nav-item">
+          <a class="nav-item text-uppercase monsta_font" href="/referral">
+            Referral
+          </a>
+        </li>
+        <li class="text-uppercase nav-item">
+          <a class="nav-item text-uppercase monsta_font" (click)="comingSoon()">
+            Marketplace
+          </a>
+        </li>
+        <li class="text-uppercase nav-item">
+          <a class="nav-item monsta_font" href="litepaper">
+            Litepaper
+          </a>
+        </li>
+        <li class="text-uppercase nav-item">
+          <a class="nav-item monsta_font" href="https://calendly.com/business-223/15min">
+            Talk To Us
+          </a>
+        </li>
+
+        <li class="text-uppercase nav-item">
+          <a class="nav-item monsta_font" href="https://Dashboard.goyachain.com">
+            Join Us
+          </a>
+        </li>
+
+
+      </ul>
+    </div>
+  </nav>
+</span>

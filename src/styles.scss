@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+@import "~locomotive-scroll/dist/locomotive-scroll.css";
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// regular style toast
+@import '~ngx-toastr/toastr';
+
+
+
+@font-face {
+  font-family: 'Titillium Web';
+  src: url(assets/fonts/TitilliumWeb-BoldItalic.ttf), format("truetype");
+  ;
+}
+
+@font-face {
+  font-family: 'xxx';
+  src: url(assets/fonts/TitilliumWeb-Bold.ttf), format('truetype');
+}
+
+@font-face {
+  font-family: 'introrustg-base2line';
+  font-style: bold;
+  font-weight: 700;
+
+  src: url(assets/fonts/IntroRustG-Base2Line.otf), format('otf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,700&display=swap');
+
+.TBoLD {
+  font-family: "TBoLD" !important;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+  color: white;
+
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoYaChain - Referral</title>
+</head>
+
+<body>
+    <div data-scroll-container>
+        <section class="main">
+
+            <div class="container-fluid">
+                <div class="row justify-content-between my-3 ">
+                    <div class="col-3 d-flex social-icon d-md-block d-none">
+
+                        <a href="https://discord.gg/NXB4rwKyZf" target="_blank">
+                            <img width="20px" class="hvr-pulse-shrink" src="assets\referral\web\Layer3.png" alt="">
+
+                        </a>
+                        <a href="https://twitter.com/GoyaChain" target="_blank">
+                            <img width="20px" class="hvr-pulse-shrink" src="assets\referral\web\Layer4.png" alt="">
+
+                        </a>
+                        <a href="https://www.facebook.com/Goyachain.Marketplace">
+                            <img width="15px" class="hvr-pulse-shrink" src="assets\referral\web\Layer5.png" alt="">
+                        </a>
+
+                        <a href=" https://t.me/Goya_marketplace" target="_blank">
+                            <img width="20px" class="hvr-pulse-shrink" src="assets\referral\web\Layer6.png" alt="">
+
+                        </a>
+                    </div>
+
+
+                    <div class="col-md-3 col-6  text-center">
+                        <a href="https://goyachain.com/">
+                            <img class="w-100 hvr-bounce-out" src="assets\referral\web\logo.png" alt="">
+
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-6 text-end">
+
+                        <button *ngIf="!wallet" class="btn btn-white onHoverTra" (click)="connectWallet()">
+                            <img class="mr-1" width="20px" src="assets\referral\web\wallet-icon.png" alt="">
+                            Connect wallet
+                        </button>
+                        <div *ngIf="isTrusted" class="col-6 re-captcha text-center">
+
+                            <re-captcha (resolved)="resolved()" siteKey="6LeMotggAAAAAL278Qmcpun3kyPBhkiQ3W2CPyJE"
+                                (error)="onError($event)" errorMode="handled">
+                            </re-captcha>
+                        </div>
+
+                        <div *ngIf="wallet" class="d-flex bg-btn-black ms-auto">
+                            <img class="mr-3" width="20px" src="assets\referral\web\wallet-icon-rgb.png" alt="">
+
+                            <span class="ms-2">
+                                {{ wallet | slice: 0:4 }}...{{ wallet | slice: -5 }}
+                            </span>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container main-sec position-relative">
+
+
+                    <div class="col-12">
+                        <img class="main-img-mobil d-block d-md-none" src="assets\referral\web\Token.png" alt="">
+
+                        <teximate class="title" text="INVITE YOUR FRIENDS,"></teximate>
+                        <teximate class="title" text="EARN TOGETHER"></teximate>
+
+                        <!-- <h1 class="title">INVITE YOUR FRIENDS,<br> EARN TOGETHER</h1> -->
+
+                        <p>Earn 10 $GOYA tokens from your friends when they connect their wallet </p>
+                        <p>To GoyaChain!</p>
+
+                        <button *ngIf="!wallet" (click)="connectWallet()"
+                            class="btn btn-white-lg mt-4 hvr-rectangle-out hvr-shrink">
+                            INVITE NOW !
+                        </button>
+
+                        <h6 *ngIf="wallet" class=" mt-5">MY REFERRAL LINK</h6>
+                        <div *ngIf="wallet" class="copy-wallet">
+                            {{ url | slice: 0:50 }}...
+                            <i class="fa fa-clone hvr-pulse-shrink ms-2" ngxClipboard [cbContent]="url"
+                                #tooltip="matTooltip" [matTooltip]="isDisabled?'copy link':'copyed!'" (click)="copy()"
+                                role="button" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <img class="main-img d-md-block d-none" width="40%" src="assets\referral\web\Token.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section *ngIf="!wallet" id="followUs" class="start-earn selected-order">
+
+            <div class="container start-earn position-relative">
+
+                <div class="col-12 text-center">
+
+                    <h1 class="title" data-scroll data-scroll-speed="1" data-scroll-delay="0.33">START EARNING TOKEN
+                    </h1>
+
+                    <p data-scroll data-scroll-speed="2" data-scroll-delay="0.3">General referral code now by completing
+                        the
+                        task below </p>
+                    <p data-scroll data-scroll-speed="2" data-scroll-delay="0.3">connect your wallet to Goya Chain</p>
+
+                    <div class="col-md-8 m-auto col-12 ">
+                        <div class="row" data-scroll data-scroll-speed="1" data-scroll-delay="0.1">
+                            <div class="col-6 text-center">
+                                <img class="faa-float animated" width="75%" src="assets\referral\web\discord-icon.png"
+                                    alt="">
+
+                                <h6 class="text-uppercase button-link btn-follo" (click)="dis()">join discord</h6>
+                            </div>
+                            <div class="col-6 text-center img-affter position-relative">
+                                <img width="75%" class="faa-float animated" src="assets\referral\web\twitter.png"
+                                    alt="">
+
+                                <h6 class="text-uppercase button-link btn-follo" (click)="tw()">Follow twitter</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-color-lg mt-3 text-uppercase hvr-rectangle-out onHoverTra"
+                        (click)="connectWallet()">
+                        <img class="mr-1" width="20px" src="assets\referral\web\wallet-icon.png" alt="">
+                        Get Reffal code
+                    </button>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </section>
+
+        <section *ngIf="wallet" class="summary">
+            <div class="container start-earn position-relative">
+
+                <div class="col-12 text-center">
+
+                    <h1 class="title" data-scroll data-scroll-speed="1" data-scroll-delay="0.3">SUMMARY</h1>
+
+
+                    <div class="col-md-12 m-auto col-12 ">
+                        <div class="row mt-5 justify-content-md-center " data-scroll data-scroll-speed="1"
+                            data-scroll-delay="0.13">
+
+                            <div class="col-md-5" data-scroll data-scroll-speed="2" data-scroll-delay="0.45">
+                                <div class="card-sum text-start position-relative">
+
+                                    <h6>Total Referral Reward ($GOYA Tokens)</h6>
+
+                                    <h1 class="display-1 fw-bold ">{{refs.length*10}} </h1>
+
+                                    <button (click)="withdow()"
+                                        class="btn btn-white btn-gray d-flex ms-auto hvr-rectangle-out hvr-shrink">
+                                        WITHDRAW
+                                    </button>
+
+                                    <img class="img-bg " src="assets\referral\web\Token-icon-card.png" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 mt-md-0 mt-3" data-scroll data-scroll-speed="2"
+                                data-scroll-delay="0.1">
+                                <div class="card-sum text-start position-relative">
+
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <h6>Total Friends</h6>
+
+                                            <h1 class="display-1 fw-bold ">{{refs.length}}</h1>
+
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="body-scroll">
+                                                <ol *ngIf="isResponseRefs">
+                                                    <li class="text-white" *ngFor="let ref of refs; index as i">
+                                                        {{ref.wallet_address|
+                                                        slice:0:6}}...{{ref.wallet_address| slice:4:10}}</li>
+                                                </ol>
+                                                <span *ngIf="!isResponseRefs">Start inviting with your unique referral
+                                                    code!</span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="how-inv" class="how-inv">
+
+            <div class="container start-earn position-relative">
+
+                <div class="col-12 text-center">
+
+                    <h1 class="title" data-scroll data-scroll-speed="2" data-scroll-delay="0.3">HOW TO INVITE FRIENDS
+                    </h1>
+
+
+                    <div class="col-md-12 m-auto col-12 ">
+                        <div class="row mt-5 justify-content-md-center ">
+
+                            <div class="col-md-3 text-center col-9 " data-scroll data-scroll-speed="2"
+                                data-scroll-delay="0.35">
+
+                                <div class="card-step hvr-buzz-out">
+
+                                    <img class="faa-float animated" width="127px"
+                                        src="assets\referral\web\link-icon.png" alt="">
+
+                                    <h6 class="text-capitalize">Perform Tasks, Connect Wallet
+
+                                    </h6>
+                                    <p class="font-sm">Connect a wallet and generate your referral link in the Referral
+                                        section
+
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-9 ms-auto my-md-0 my-3 ms-md-0  text-center" data-scroll
+                                data-scroll-speed="2" data-scroll-delay="0.25">
+
+                                <div class="card-step hvr-buzz-out">
+
+                                    <img class="faa-float animated" width="127px"
+                                        src="assets\referral\web\Hand-icon.png" alt="">
+
+                                    <h6 class="text-capitalize">Get A Referral Link</h6>
+                                    <p class="font-sm">Invite your friends to register via
+                                        your referral link
+
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-9 text-center" data-scroll data-scroll-speed="2"
+                                data-scroll-delay="0.1">
+
+                                <div class="card-step hvr-buzz-out">
+
+                                    <img class="faa-float animated" width="127px"
+                                        src="assets\referral\web\Token-icon.png" alt="">
+
+                                    <h6 class="text-capitalize">Share And Earn $GOYA</h6>
+                                    <p class="font-sm">Receive referral rewards in $GOYA
+                                        tokens from your friends
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section style="min-height: 60vh; height: 60vh; background: #000508">
+            <div class="container-fluid">
+                <div>
+                    <div id="rd" class="text-center " class="pt-4">
+                        <h1 class="work-flow">Follow Us</h1>
+                        <div class="text-center">
+                            <hr class="line">
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center footer-icon">
+                                <a href="https://discord.gg/NXB4rwKyZf"> <img class="follow-us"
+                                        src="../assets/Layer3.png"></a>
+                                <a href="https://twitter.com/GoyaChain"> <img class="follow-us"
+                                        src="../assets/Layer4.png"></a>
+                                <a href="https://www.instagram.com/goyachain/"> <img class="follow-us"
+                                        src="../assets/instagram.png"></a>
+                                <a href="https://www.facebook.com/Goyachain.Marketplace"> <img class="follow-us-face"
+                                        src="../assets/Layer5.png"></a>
+                                <a href="https://t.me/Goya_marketplace"> <img class="follow-us"
+                                        src="../assets/Layer6.png"></a>
+                            </div>
+
+                            <div class="pt-2 text-center">
+                                <h6>Copyright © 2022 - 2023 GoYaChain </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>

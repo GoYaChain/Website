@@ -1,0 +1,9 @@
+
+::ng-deep body::-webkit-scrollbar {
+    width: 5px;               /* width of the entire scrollbar */
+  }
+
+  ::ng-deep body::-webkit-scrollbar-thumb {
+    background-color: #011c3fcb;    /* color of the scroll thumb */
+    border-radius: 8px;       /* roundness of the scroll thumb */
+  }
