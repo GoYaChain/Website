@@ -32,6 +32,7 @@ import { ChartComponent } from './main/chart/chart.component';
 import { HttpHelper } from './Helper/http-helper';
 import { ReferralComponent } from './pages/referral/referral.component';
 import { SharedModule } from './shared/shared.module';
+import { OpsComponent } from './pages/ops/ops.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { SharedModule } from './shared/shared.module';
     ReferralComponent,
     TimelineComponent,
     ChartComponent,
+    OpsComponent,
     
   ],
   imports: [

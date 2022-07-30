@@ -1,0 +1,65 @@
+<section class="main text-center">
+
+
+    <div class="row justify-content-center">
+        <div class="col-8 text-center">
+            <h1>Hi Abdul ♥️ </h1>
+        </div>
+        <div *ngIf="isFalse && !isTrue">
+            <img class="im-w" src="assets\sad.png" alt="">
+
+            <div>
+                <button class="btn" (click)="isFalse=false">Try Again💔</button>
+
+            </div>
+        </div>
+        <div *ngIf="isTrue">
+            <!-- <div style="height: 100px;"></div> -->
+            <h1 class="display-1 f-ha">Happy birthday my love</h1>
+            <div style="color: rgb(180 9 9);
+    font-size: 70px;
+">♥️♥️♥️♥️ 😚😚🎊🎉🎉</div>
+
+            <img style="       height: 311px;
+            object-fit: contain;
+            border-radius: 45px;
+            overflow: hidden;
+            width: auto !important;" src="assets\me.jpg" alt="">
+        </div>
+
+        <div class="col-6 mt-5" *ngIf="!isFalse && !isTrue">
+            <div class="row justify-content-center box-b">
+                <div class="" style="flex: 0 1 calc(20% - 8px)" *ngFor="let item of   list1">
+
+                    <div class="box">{{item}}</div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div class="w-50 m-auto mt-5" *ngIf="!isFalse && !isTrue">
+        <p>what is the word ? ♥️</p> <input type="text" placeholder="word" name="word" [(ngModel)]="word">
+
+    </div>
+    <button *ngIf="!isFalse && !isTrue" class="btn" (click)="check(word)">check</button>
+
+    <div *ngIf="!isFalse && !isTrue">
+        <a class="text-warning pointer" (click)="help=!help"> Use help if you can't solve it</a>
+
+        <div *ngIf="help">
+            <p class="mt-5" style="
+            font-family: cursive;
+            transform: rotate(-25deg);
+        ">7/31</p>
+            <img width="400px" src="assets\Samsung-Keyboard-720x404.jpg" alt="">
+            <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=94,height=94,fit=cover,f=auto/f89b2e49f4230ef716355090a879bfa3.png"
+                alt="">
+        </div>
+    </div>
+
+
+</section>

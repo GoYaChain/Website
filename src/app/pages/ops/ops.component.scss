@@ -1,0 +1,38 @@
+
+
+.main{
+    background-image: url("../../../assets/presale/background2.png") !important;
+    background-size: cover;
+    background-position: center;
+    padding: 30px 30px;
+    min-height: 100vh;
+
+    .pointer{
+        cursor: pointer;
+    }
+    button{
+        margin-top: 11px;
+        color: white;
+        background: #ff0088;
+    }
+    .im-w{
+        width: 406px;
+    }
+    .f-ha{
+        font-weight: 900;
+        font-family: cursive;
+    }
+    .box-b{
+        justify-content: center;
+        background: #0000001c;
+        border-radius: 20px;
+        box-shadow: 1px 1px 12px 1px #e4e4e4;
+    }
+    .box{
+        padding: 20px;
+        color: whitesmoke;
+        background: #adade83d;
+        display: flex;
+        justify-content: center;
+    }
+}
