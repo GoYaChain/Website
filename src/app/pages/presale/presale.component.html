@@ -1,0 +1,208 @@
+<section class="main main-sec">
+    <div id="pre-home" class="col-12 m-0 row ">
+
+
+        <div class="row justify-content-between my-3 ">
+            <div class="col-3 d-flex social-icon d-md-block d-none">
+
+                <a href="https://discord.gg/NXB4rwKyZf" target="_blank">
+                    <img width="20px" class="hvr-pulse-shrink" src="assets\presale\de.png" alt="">
+
+                </a>
+                <a href="https://twitter.com/GoyaChain" target="_blank">
+                    <img width="20px" class="hvr-pulse-shrink" src="assets\presale\tw.png" alt="">
+
+                </a>
+                <a href="https://www.facebook.com/Goyachain.Marketplace">
+                    <img width="20px" class="hvr-pulse-shrink" src="assets\presale\f.png" alt="">
+                </a>
+
+                <a href=" https://t.me/Goya_marketplace" target="_blank">
+                    <img width="20px" class="hvr-pulse-shrink" src="assets\presale\tlg.png" alt="">
+
+                </a>
+            </div>
+
+
+            <div class="col-md-2 col-6  text-center">
+                <a href="https://goyachain.com/">
+                    <img class="w-100 hvr-bounce-out" src="assets\referral\web\logo.png" alt="">
+
+                </a>
+            </div>
+            <div class="col-md-3 col-6 text-end">
+
+                <button *ngIf="!wallet" class="btn walletButton onHoverTra" (click)="connectWallet()">
+                    <img class="mr-1" width="20px" src="assets\presale\WALLETicon.png" alt="">
+                    Connect wallet
+                </button>
+                <div *ngIf="isTrusted" class="col-6 re-captcha text-center">
+
+
+                </div>
+
+                <div *ngIf="wallet" class="d-flex bg-btn-black ms-auto">
+                    <img class="mr-3" width="20px" src="assets\referral\web\wallet-icon-rgb.png" alt="">
+
+                    <span class="ms-2">
+                        {{ wallet | slice: 0:4 }}...{{ wallet | slice: -5 }}
+                    </span>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div>
+            <div class="text-center">
+
+                <h1 class="display-1 f-bold mt-5">
+                    PRESALE <br>
+                    WHITELIST
+                </h1>
+                <h6 class="font-sm __font mobile_ds mt-2">2,000,000 $LOA Token at $0.05, now open for registration </h6>
+
+                <a href="presale#inviteFriends" *ngIf="!connected">
+                    <button class="btn walletButton my-5" data-aos="zoom-in" data-aos-duration="2000">
+                        LEARN HOW</button>
+                </a>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+<section *ngIf="!connected" id="inviteFriends" class="position-relative">
+    <div class="col-12 text-center header_text pt-4">
+        <h1 class="header_para" data-aos="fade-up" data-aos-duration="1000">JOIN THE PRESALE TODAY!</h1>
+
+
+    </div>
+
+    <div class="row justify-content-center how-inv position-relative">
+    <img class="img-line d-none d-md-block" src="assets\presale\line.png" alt="" >
+
+        <div class="col-md-3 col-12  mt-2">
+            <div class="card-step hvr-buzz-out w-100">
+                <div class="col-12 text-center">
+
+                    <img  width="127px" src="assets\presale\iconReforralLink.png" alt=""
+                        class="faa-float animated">
+               
+                    <h5 class="text-white text-capitalize">
+                        Get A Referral link
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-12  mt-2">
+            <div class="card-step hvr-buzz-out w-100">
+                <div class="col-12 text-center">
+                    <img _ngcontent-due-c151="" width="127px" src="assets\presale\InvitoFriandsicon.png" alt=""
+                        class="faa-float animated">
+                    
+
+                    <h5 class="text-white text-capitalize" style="font-size:18px !important;">
+                        Invito Friands
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+
+    
+
+    </div>
+
+    <div class="text-center mt-5">
+        <button class="btn walletButton mt-5" data-aos="zoom-in" data-aos-duration="2000"><i
+                class="fas fa-wallet walletIcon">
+            </i> GET STARTED</button>
+    </div>
+
+</section>
+
+
+<!-- <section *ngIf="connected" id="summary"> -->
+    <section  id="summary">
+
+    <div class="col-12 text-center header_text pt-4">
+        <h1 class="header_para">START INVITING</h1>
+        <h6 class="font-sm __font mobile_ds">Participate in the greatest event of the year by completing the simple
+            steps below.
+        </h6>
+
+    </div>
+
+
+    <div>
+        <div class="row  justify-content-center mt-5">
+            <div class="col-12 col-md-6 mt-2">
+                <div class="border-card">
+                    <h5 class="text-white text-capitalize">
+                        My Referral Link
+                    </h5>
+
+
+                    <button id="link" (click)="showSuccess()" class="btn inviteButtonConnected mt-1 mb-2">
+                        {{url | slice: 0:33}}...<i class="far fa-2x fa-copy align-right"></i></button><br>
+                    <span class=" xs-font font-sm __font text-white">Start inviting your friends & family to connect wallet in <br>
+                        order
+                        to be qualified for our Pre-Sale Event !</span>
+
+                    <h5 class="text-white text-capitalize mt-3">
+                        My Status
+                    </h5>
+                    <button *ngIf="!qulifid" class="btn buttonStartInv mt-1 mb-2">
+                        NOT QUALIFIED
+                    </button>
+                    <button *ngIf="qulifid" class="btn buttonStartInv mt-1 mb-2" style="background-color: #22B573;">
+                        QUALIFIED</button>
+
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6 mt-2">
+                <div class="border-card ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="text-white text-capitalize">
+                                total Friends
+                            </h5>
+                            <h1 class="l-font">{{refs.length}}/10</h1>
+                        </div>
+                        <div class="col-md-6 col-scroll">
+
+                            <ol *ngIf="isResponse">
+                                <li *ngFor="let ref of refs; index as i">{{ref.wallet_address|
+                                    slice:0:6}}...{{ref.wallet_address| slice:4:10}}</li>
+                            </ol>
+                            <span *ngIf="!isResponse" class="text-white">Start inviting with your unique referral code!</span>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- <div class="text-center pt-3">
+                <h2 (click)="showUrl()" class="font_a"> having issue getting the referral code?</h2>
+                <div *ngIf="showBox">
+                    <textarea name="" id="" cols="30" rows="10">
+                        {{url}}
+                    </textarea>
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+
+
+
+
+</section>

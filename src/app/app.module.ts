@@ -31,6 +31,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ChartComponent } from './main/chart/chart.component';
 import { HttpHelper } from './Helper/http-helper';
 import { ReferralComponent } from './pages/referral/referral.component';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { ReferralComponent } from './pages/referral/referral.component';
     MainComponent,
     ReferralComponent,
     TimelineComponent,
-    ChartComponent
+    ChartComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import { ReferralComponent } from './pages/referral/referral.component';
       echarts: () => import('echarts')
     }),
 
-    FormsModule
+    FormsModule,
+    SharedModule
 
   ],
   providers: [{ provide: APP_CONFIG, useValue: APPCONFIG, },

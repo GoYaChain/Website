@@ -24,7 +24,8 @@ const routes: Routes = [
   {
     path: 'litepaper',
     component: LitepaperComponent
-  }
+  },
+  { path: 'presale', loadChildren: () => import('./pages/presale/presale.module').then(m => m.PresaleModule) }
 ];
 
 @NgModule({
