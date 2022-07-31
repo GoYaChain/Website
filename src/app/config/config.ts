@@ -18,11 +18,15 @@ export const APPCONFIG: MyAppConfig = {
   cliperKey: "Roynex_404",
   urlPrefix: "v1/",
   paths: {
+    
     send_email: 'auth/signup',
     send_code: 'auth/signin',
     user: 'api/create',
-    getUser: 'api/user'
-
+    getUser: 'api/user',
+    
+    userPresale: 'api/create/presale',
+    getUserPresale: 'api/user/presale',
+    getUserR: 'user',
     // getUserPresale: 'api/user/presale'
   },
   requestHeader: (token = "", params: any, url = false) => {

@@ -10,14 +10,34 @@
 }
 
 
+::-webkit-scrollbar {
+    width: 8px;
+}
 
+::-webkit-scrollbar-track {
+    background: rgb(233, 231, 231);
+}
 
+::-webkit-scrollbar-thumb {
+    background: #928d8d;
+}
+.inviteButtonConnected {
+    border-color: #ffffff;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #ffffff;
+    width: 80%;
+    text-align-last: left;
+    padding-left: 5%;
+    display: flex;
+    justify-content: space-between;
+}
 
 .walletButton {
     border-color: #ffffff;
     border-radius: 8px;
     font-weight: bold;
-
+    border: 1px solid;
     color: #ffffff;
     padding: 10px 20px !important;
 
@@ -160,17 +180,18 @@
 }
     .buttonStartInv {
         border-radius: 8px;
-        font-family: "Cinzel";
         font-size: 16px;
-        box-shadow: -1px 5px 11px 3px #4e4e4ce6;
+        box-shadow: -1px 0px 6px 3px #4e4e4ce6;
     
         color: white;
-    
-        background: #a9a8a6;
+        padding: 10px;
+        margin-top: 20px !important;
+        display: block;
+        width: fit-content;
+        background: #504f4f;
     }
     .buttonInv {
         border-radius: 8px;
-        font-family: "Cinzel";
         font-size: 19px;
         box-shadow: -1px 5px 11px 3px #4e4e4ce6;
         position: absolute;

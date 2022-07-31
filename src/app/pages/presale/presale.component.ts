@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTooltip } from '@angular/material/tooltip';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { HashStr } from 'src/app/Service/hash-str.service';
@@ -27,6 +28,11 @@ export class PresaleComponent implements OnInit {
   public qulifid: boolean = false;
   public isTrusted: boolean = false;
   public showBox: boolean = false;
+
+  isDisabled: boolean = true;
+
+  @ViewChild("tooltip") tooltip: MatTooltip;
+
 
   constructor(private hashStr: HashStr, private service: PresaleService, private route: ActivatedRoute, private toastr: ToastrService) {
     this.route.queryParams.subscribe((params) => {
@@ -77,10 +83,16 @@ export class PresaleComponent implements OnInit {
   }
 
   getUser = async () => {
-    // let res: any = await this.service.getUserPreslae(this.wallet);
-    let res: any = []
+
+    try {
+    
+
+    let res: any = await this.service.getUserPreslae(this.wallet);
+    // let res: any = []
     this.user = res;
     this.refs = this.user.refs;
+
+    console.log('res :>> ', res);
     this.setUserWallet(this.user.wallet_address)
     if (this.refs.length > 0) {
       this.isResponse = true;
@@ -89,6 +101,11 @@ export class PresaleComponent implements OnInit {
       this.qulifid = true;
     }
     this.url = "https://goyachain.com/presale/?viHash=" + this.createUrl();
+
+    
+  } catch (error) {
+    console.log('error :>> ', error);
+  }
   }
 
   createUrl = () => {
@@ -156,8 +173,12 @@ export class PresaleComponent implements OnInit {
     window.location.href = "https://goyaref.roynex.com"
   }
   createUser = async (obj: any) => {
+    try {
+      
+    
     let res: any = await this.service.createUserPresale(obj)
 
+    console.log('createUser :>> ', res);
     if (res.msg == "User already exsist") {
       this.getUser()
     } else if (res.msg == "exceeded referral limit") {
@@ -179,12 +200,22 @@ export class PresaleComponent implements OnInit {
       this.setUserWallet(this.user.wallet_address)
       this.url = "https://goyachain.com/referral/?vHash=" + this.createUrl();
     }
+
+  } catch (error) {
+      
+  }
   }
   home() {
     window.location.href = "https://goyachain.com/";
   }
   showUrl() {
     this.showBox = true;
+  }
+
+  copy() {
+    this.isDisabled = false;
+    this.tooltip.show();
+    setTimeout(() => (this.isDisabled = true), 2000);
   }
 }
 interface User {

@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { PresaleRoutingModule } from './presale-routing.module';
 import { PresaleComponent } from './presale.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ClipboardModule } from 'ngx-clipboard';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -11,7 +14,13 @@ import { PresaleComponent } from './presale.component';
   ],
   imports: [
     CommonModule,
-    PresaleRoutingModule
+    PresaleRoutingModule,
+
+
+    MatTooltipModule,
+    ToastrModule.forRoot(),
+
+    ClipboardModule,
   ]
 })
 export class PresaleModule { }

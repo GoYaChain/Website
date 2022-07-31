@@ -30,7 +30,7 @@
 
                 </a>
             </div>
-            <div class="col-md-3 col-6 text-end">
+            <div class="col-md-2 col-6 text-end">
 
                 <button *ngIf="!wallet" class="btn walletButton onHoverTra" (click)="connectWallet()">
                     <img class="mr-1" width="20px" src="assets\presale\WALLETicon.png" alt="">
@@ -41,11 +41,11 @@
 
                 </div>
 
-                <div *ngIf="wallet" class="d-flex bg-btn-black ms-auto">
+                <div *ngIf="wallet" class="d-flex bg-btn-black ms-auto walletButton onHoverTra">
                     <img class="mr-3" width="20px" src="assets\referral\web\wallet-icon-rgb.png" alt="">
 
                     <span class="ms-2">
-                        {{ wallet | slice: 0:4 }}...{{ wallet | slice: -5 }}
+                        {{ wallet | slice: 0:5 }}...{{ wallet | slice: -6 }}
                     </span>
 
                 </div>
@@ -147,21 +147,22 @@
                         My Referral Link
                     </h5>
 
-
                     <button id="link" (click)="showSuccess()" class="btn inviteButtonConnected mt-1 mb-2">
-                        {{url | slice: 0:33}}...<i class="far fa-2x fa-copy align-right"></i></button><br>
-                    <span class=" xs-font font-sm __font text-white">Start inviting your friends & family to connect wallet in <br>
-                        order
-                        to be qualified for our Pre-Sale Event !</span>
-
+                        {{url | slice: 0:44}}...
+                        
+                        <i class="far fa-2x fa-copy align-right hvr-pulse-shrink ms-2" ngxClipboard [cbContent]="url"
+                            #tooltip="matTooltip" [matTooltip]="isDisabled?'copy link':'copyed!'" (click)="copy()"
+                            role="button" aria-hidden="true"></i>
+                 </button><br>
+                    
                     <h5 class="text-white text-capitalize mt-3">
                         My Status
                     </h5>
-                    <button *ngIf="!qulifid" class="btn buttonStartInv mt-1 mb-2">
+                    <span *ngIf="!qulifid" class=" buttonStartInv mt-1 mb-2">
                         NOT QUALIFIED
-                    </button>
-                    <button *ngIf="qulifid" class="btn buttonStartInv mt-1 mb-2" style="background-color: #22B573;">
-                        QUALIFIED</button>
+                    </span>
+                    <div *ngIf="qulifid" class=" buttonStartInv mt-1 mb-2" style="background-color: #22B573;">
+                        QUALIFIED</div>
 
                 </div>
 
